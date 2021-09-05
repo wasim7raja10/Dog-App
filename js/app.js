@@ -3,6 +3,8 @@ let selectedBreed = 'labrador';
 let urlDoggo = `https://dog.ceo/api/breed/${selectedBreed}/images/random`;
 let breedList = document.querySelector('#breed');
 let dogImg = document.querySelector('.img');
+let nextButton = document.querySelector('.change');
+const spinner = document.querySelector('.spinner');
 
 function addDogList() {
   fetch(urlBreedList)
@@ -19,11 +21,15 @@ function addDogList() {
 }
 
 const getImg = function getImg(urlDoggo) {
+  // spinner.classList.add('show');
+  // dogImg.classList.remove('show');
   fetch(urlDoggo)
     .then(response => response.json())
     .then(data => {
       dogImg.src = data.message;
       dogImg.alt = `${selectedBreed} dog picture`;
+      // spinner.classList.remove('show');
+      dogImg.classList.add('show');
     })
 }
 
@@ -35,6 +41,15 @@ function showImg() {
   });
 }
 
+function showNextImg() {
+  nextButton.addEventListener("click", function () {
+    console.log("pressed")
+    getImg(urlDoggo);
+    console.log(selectedBreed);
+  })
+}
+
 addDogList();
 getImg(urlDoggo);
 showImg();
+showNextImg();
