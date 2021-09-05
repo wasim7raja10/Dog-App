@@ -47,9 +47,7 @@ function showImg() {
 
 function showNextImg() {
   nextButton.addEventListener("click", function () {
-    console.log("pressed")
     getImg(urlDoggo);
-    console.log(selectedBreed);
   })
 }
 
