@@ -9,6 +9,20 @@ body {
   margin: 0;
 }
 
+nav {
+  background-color: #ff4136;
+  color: white;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  margin: 0;
+  list-style: none;
+}
+
 @keyframes spin {
   to {
     transform: rotateZ(360deg);
@@ -21,9 +35,9 @@ body {
   display: none;
 }
 
-/* .dog-img {
+.dog-img {
   display: none;
-} */
+}
 
 .show {
   display: block;
